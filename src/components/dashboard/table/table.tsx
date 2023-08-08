@@ -9,6 +9,7 @@ import TableHeadContainer from "./tableHead";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { Paper } from "@mui/material";
+import { educationEnum } from "@/utils/educationEnum";
 
 export default function CustomizedTables({ data }: ResponseDataType) {
   console.log({ data });
@@ -27,14 +28,16 @@ export default function CustomizedTables({ data }: ResponseDataType) {
                 <StyledTableCell align="right" scope="row">
                   {index + 1}
                 </StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.nationalId}
+                </StyledTableCell>
                 <StyledTableCell align="right">{row.name}</StyledTableCell>
                 <StyledTableCell align="right">
                   {row.familyName ? row?.familyName : ""}
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  {row.nationalId}
+                  {educationEnum[`${row.education}`]}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.education}</StyledTableCell>
                 <StyledTableCell align="right">
                   {row.status === "active" ? (
                     <CheckIcon color={"success"} />
