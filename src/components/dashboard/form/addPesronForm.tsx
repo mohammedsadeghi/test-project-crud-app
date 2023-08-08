@@ -26,7 +26,7 @@ export const Form = () => {
   const onSubmit = (data: IFormInput) =>
     handleSubmitForm({ ...data, nationalId: JSON.parse(data.nationalId) })
       .then((res) => {
-        console.log({ res });
+         
         if (res.status === 200) handleCloseModal(false);
       })
       .catch((e: unknown) => console.log(e));

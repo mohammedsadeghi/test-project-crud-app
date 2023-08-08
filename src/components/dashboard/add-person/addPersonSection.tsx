@@ -7,7 +7,7 @@ import { Form } from "../form/addPesronForm";
 
 export const AddPersonSection = () => {
   const [open, setOpen] = useState(false);
-  console.log({ open });
+   
   return (
     <>
       <Box sx={{ display: "flex", justifyContent: "flex-start", p: 5 }}>

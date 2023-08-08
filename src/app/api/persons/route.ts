@@ -25,7 +25,6 @@ export async function POST(req: NextRequest) {
   const { data }: { data: ResponseDataType["data"][0] } = await req.json();
   //check tag for revalidation
   const tag = req.nextUrl.searchParams.get("tag");
-  console.log({ tag });
 
   if (!tag) {
     return NextResponse.json({ message: "Missing tag param" }, { status: 400 });
@@ -43,7 +42,7 @@ export async function POST(req: NextRequest) {
         fileStats.size !== 0 ? [...JSON.parse(jsonString).data, data] : [data],
     } as ResponseDataType)
   );
-  console.log({ tag });
+
   revalidateTag(tag);
 
   return NextResponse.json({ revalidated: true, now: Date.now() });

@@ -30,7 +30,6 @@ export const AddPersonModal = ({
             open,
             handleCloseModal: (value: boolean) => {
               handleCloseModal(value);
-              console.log("click");
             },
           }}
         >

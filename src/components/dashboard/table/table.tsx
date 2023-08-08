@@ -12,7 +12,6 @@ import { Paper } from "@mui/material";
 import { educationEnum } from "@/utils/educationEnum";
 
 export default function CustomizedTables({ data }: ResponseDataType) {
-  console.log({ data });
   return (
     <TableContainer
       component={Paper}
